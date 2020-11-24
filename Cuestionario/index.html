@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cuestionario</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    
+    </head>
+
+    <body class="body">
+        <div id="pregunta"></div>
+        <div id="respuestas"></div>
+        <input class="boton_personalizado" type="button" value="Validar respuesta correcta" onclick="Comprobar()">
+        <script>
+            var preguntas= [
+                "Que es un servidor web, qué es un cliente web?",
+                "Que son aplicaciones dinámicas sincrónicas y asoncrónicas en la web?",
+                "Que tipos de tecnologías se requieren para realizar aplicaciones en tiempo real?",
+                "Cuales son las aplicaciones típicas de las aplicaiones en tiempo real?",
+                "Que es un websocket?",
+                "Cuales son las aplicaciones de los websocket?",
+                "Cuales son las características del API websockets?",
+                "Que navegadores soportan websocket y que se entiende por FrontEnd y BackEnd?",
+                "Que son las PWA (Progressive Web Apps), aplicaciones web progresivas, cuales son sus ventajas y desventajas?",
+                "Cuales son las tecnologias de las aplicaciones móviles nativas, que son los servicios worker, como se implementan?",
+                "Que herramientas se pueden utilizar para desarrollar aplicaciones tiempo real modernas que tambien funcionen en los dispositivos moviles?"
+            ];
+            var respuestas = [
+                ["Un servidor web o servidor HTTP es un programa informático que procesa una aplicación del lado del servidor, realizando conexiones bidireccionales o unidireccionales y síncronas o asíncronas con el cliente y generando o cediendo una respuesta en cualquier lenguaje o aplicación del lado del cliente.Ordenador conectado a internet que realiza la petición  de documentos incluidos en una pagina web para visualizarlos mediante programas navegadores.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate volutpat sapien in pharetra. Praesent imperdiet nibh et augue lobortis.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum nibh arcu, eu tristique sapien ullamcorper vitae. Phasellus non felis."],
+                ["Las aplicaciones dinámicas sincrónicas son aplicaciones que ejecutan una tarea de manera lineal esperando a que cada subtarea se cumpla una por una para poder devolver una respuesta en función de la solicitud, una asincrónica viene siendo lo mismo con la diferencia de que esta no espera a que cada subtarea se cumpla para devolver una solicitud, si no que ejecuta otras tareas sin tener dependencias.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod imperdiet molestie. Mauris non sapien.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget finibus massa. Nulla a feugiat."],
+                ["Para hacer aplicaciones en tiempo real se requiere de ciertas aplicaciones para poder estar trayendo constantemente la información del servidor, algunas de estas tecnologías son: pooling webpooling, websockets y eventos.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non nisl sagittis, porttitor sapien eget.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin purus sapien, ultricies sit amet ex sit amet, vehicula condimentum sapien."],
+                ["Las redes sociales, los sistemas de correo electrónico, solaris y LynxSO entre otras.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus elit eget posuere scelerisque. Aliquam ornare fringilla congue. Mauris cursus.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at quam in."],
+                ["Los websockets son simplemente un canal de conexión de dos vías el cual utiliza diferentes puertos para intercambiar información con el servidor.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer condimentum finibus felis, ut mollis tellus.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae tortor mauris. Orci varius natoque."],
+                ["Es realmente útil para las aplicaciones que necesitan mucha interacción con el servidor. Como WebSockets nos brinda el beneficio de la comunicación en tiempo real, las aplicaciones que requieren la transferencia de datos en tiempo real, como las aplicaciones de chat, pueden aprovechar WebSockets. Deberíamos usar WebSockets donde la comunicación es mayor en términos de datos que pasan entre el cliente y el servidor. Existen muchas aplicaciones, como las aplicaciones de inventario, donde los datos se actualizan en tiempo real. Las aplicaciones de colaboración necesitan compartir datos en tiempo real, como un juego de ajedrez o un juego de ping-pong.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar arcu ligula, in viverra sem.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mattis nulla in massa mollis posuere."],
+                ["Posee interfaces de eventos las cuales controlan el flujo de la conexión y los datos con el servidor, hay compatibilidad con varios navegadores en diferentes versiones, se puede utilizar en diferentes frameworks y lenguajes de backend como nodejs.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et aliquet felis. Aenean condimentum non.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper dignissim porta. Quisque placerat purus."],
+                ["Los navegadores que soportan websockets son chrome, Firefox, Opera, Safari y Edge. Backend es el desarrollo que se hace desde el lado del servidor, es en donde se estructura el código para procesar y devolver solicitudes que se hacen desde el frontend. FrontEnd es el desarrollo que se hace desde el lado del cliente y es en donde se muestran las respuestas que se envían desde el servidor y a su vez donde se generan las peticiones.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue rutrum mi, ac pulvinar arcu.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat augue id justo blandit consequat."],
+                ["Progressive web apps (PWA) o aplicación web progresiva es una solución basada en la web tradicional que todos conocemos, aunque incorpora algunas particularidades que la hacen parecerse a una app nativa para teléfonos móviles y tabletas. Cada proyecto es independiente y el nivel de adaptación de la web al formato app es progresivo, por lo que puede que visitemos un site con una PWA casi idéntica a una app o quizá sea una web con algunos avances.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut facilisis lectus diam, non suscipit mi.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt nunc eu leo aliquam, vel."],
+                ["Algunas tecnologías son: Kotlin(Android), Swift(ios), react-native(Android-ios), Xamarin y lonic. Los service worker es una secuencia de comandos que se ejecutan en segunda plano en el navegador, estos no requieren de interfaz gráfica por lo que pueden llegar a ser muy livianos. Para implementar un service worker se requiere, que el navegador para el cual se está desarrollando la aplicación sea compatible con la tecnología posterior que necesita que el sitio posea HTTPS, para ello es necesario un certificado tls y por último se debe de registrar en nuestro sitio web a través de javascript","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae tempor leo. Vivamus nulla odio.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida semper orci eu congue. Aliquam."],
+                ["Se usa JavaScript, Ruby, Python, .NET y un nuevo estilo de comunicación en tiempo real, los llamados Socket que implementan HTML5.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque risus nisl, consectetur vel.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus rhoncus nisi, ut semper massa."]
+            ];
+
+            Responder();
+
+            var indice_respuesta_correcta;
+ 
+            function Responder(){
+   
+            var indice_aleatorio = Math.floor(Math.random()*preguntas.length);
+
+            var respuestas_posibles = respuestas[indice_aleatorio];
+
+            var posiciones = [0,1,2];
+            var respuestas_reordenadas = [];
+
+            var ya_se_ingreso_el_valor = false;
+            for(i in respuestas_posibles){
+                var posicion_aleatoria= Math.floor(Math.random()*posiciones.length);
+                if(posicion_aleatoria==0 && ya_se_ingreso_el_valor == false){
+                    indice_respuesta_correcta = i;
+                    ya_se_ingreso_el_valor = true;
+                }
+                respuestas_reordenadas[i] = respuestas_posibles[posiciones[posicion_aleatoria]];
+                posiciones.splice(posicion_aleatoria, 1);
+            }
+
+            
+            var txt_respuestas="";
+            for(i in respuestas_reordenadas){
+                txt_respuestas += '<input type="radio" name="pp" value="'+i+'"><label>'+respuestas_reordenadas[i]+'</label><br>'
+            }
+
+            document.getElementById("respuestas").innerHTML = txt_respuestas;
+            document.getElementById("pregunta").innerHTML = preguntas[indice_aleatorio];
+            }
+        
+            function Comprobar(){
+            var respuesta = $ ("input[type=radio]:checked").val();
+            if(respuesta== indice_respuesta_correcta){
+                alert("Respuesta correcta :)");
+            } else{
+                alert("Vuelve a intentarlo");
+            }
+            Responder();
+        }
+
+        </script>
+    </body>
+    <br><br><br>
+    <footer class="footer">Desarrollado por: Sebastian Restrepo Muñoz</footer>
+</html>

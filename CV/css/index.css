@@ -1,0 +1,61 @@
+* { margin: 0; padding: 0; }
+        body { font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url(images/noise.jpg); }
+        .clear { clear: both; }
+        #page-wrap { width: 800px; margin: 40px auto 60px; }
+        #pic { float: right; margin: -30px 0 0 0; }
+        h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }
+        h2 { font-size: 20px; margin: 0 0 6px 0; position: relative; }
+        h2 span { position: absolute; bottom: 0; right: 0; font-style: italic; font-family: Georgia, Serif; font-size: 16px; color: #999; font-weight: normal; }
+        p { margin: 0 0 16px 0; }
+        a { color: #999; text-decoration: none; border-bottom: 1px dotted #999; }
+        a:hover { border-bottom-style: solid; color: black; }
+        ul { margin: 0 0 32px 17px; }
+        #objective { width: 500px; float: left; }
+        #objective p { font-family: Georgia, Serif; font-style: italic; color: #666; }
+        dt { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 100px; border-right: 1px solid #999;  }
+        dd { width: 600px; float: right; }
+        dd.clear { float: none; margin: 0; height: 15px; }
+
+        .footer { clear: both; font-size: 20px; height: 30px; text-align: center; padding: 20px 0; color: black; border-top: 1px dotted #ccc; }
+        .logos{
+            border-radius: 40%;
+            margin-left: 20%;
+            margin-top: 18%;
+        }
+
+        .shared-panel{
+            overflow: auto;
+        }
+        .shared-panel span{
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .shared {
+            display: inline-block;
+            width: 30px; 
+            height: 30px;
+            margin: 5px 0; 
+            padding: 0; 
+                /* Recurso incluido en la descarga del ejemplo */
+            background: url("shared.png") no-repeat; 
+            float: left;
+            margin-right: 5px; 
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .shared:hover{
+            opacity: 0.7;
+        }
+        .shared.ig {background-position: 0px 0px; background-color: white; border-color: white;}
+        .shared.tt {background-position: 0px -30px; background-color: white; border-color: white;}
+        .shared.ce {background-position: 0px -60px; background-color: white; border-color: white;}
+        .shared.wa {background-position: 0px -90px; background-color: white; border-color: white;}
+        .shared.fb {background-position: 0px -120px; background-color: white; border-color: white;}
+        
+        .st2{
+           border-radius: 0;
+        }
+        .st3{
+           border-radius: 5px;
+        }
